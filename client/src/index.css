@@ -231,9 +231,11 @@ nav ul li a:hover {
 }
 
 .skill-card h3 {
+  color:black;
   margin-bottom: 8px;
 }
 
 .skill-card p {
-  margin: 0;
+  color:#555; 
+   margin: 0;
 }
