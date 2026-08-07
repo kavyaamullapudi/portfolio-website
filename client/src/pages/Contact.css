@@ -1,7 +1,15 @@
-.contact {
-  width: 50%;
-  margin: 60px auto;
-  padding: 30px;
+.projects-section {
+  padding: 60px 20px;
+  background: #f9f9f9;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
   background: #ffffff;
   border-radius: 15px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.1);
