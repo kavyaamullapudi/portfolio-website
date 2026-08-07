@@ -1,34 +1,23 @@
-import "./Home.css";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <section className="hero">
+    <section className="home-section">
+      <div className="home-content">
+        <h1>Hello, I'm Kavya</h1>
 
-      <div className="hero-content">
-
-        <h3>Hello, I'm</h3>
-
-        <h1>Kavya Mullapudi</h1>
-
-        <h2>Full Stack Developer</h2>
+        <h2>Computer Science & Engineering Student</h2>
 
         <p>
-          Passionate Computer Science student with knowledge of
-          React, Node.js, Express.js, MongoDB, Java, and Python.
-          I enjoy building modern and user-friendly web applications.
+          I am passionate about software development, web technologies,
+          and building practical projects.
         </p>
 
-        <div className="hero-buttons">
-      
-          <a href="/contact" className="btn btn-outline">Contact Me</a>
+        <div className="home-buttons">
+          <Link to="/projects">View Projects</Link>
+          <Link to="/contact">Contact Me</Link>
         </div>
-
       </div>
-
-      <div className="hero-image">
-        <img src="/images/kavya.jpg" alt="Kavya" />
-      </div>
-
     </section>
   );
 }

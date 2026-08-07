@@ -278,3 +278,45 @@ nav ul li a:hover {
 .contact-status {
   font-weight: bold;
 }
+.home-section {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 8%;
+}
+
+.home-content {
+  max-width: 700px;
+}
+
+.home-content h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.home-content h2 {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.home-content p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.home-buttons a {
+  padding: 12px 22px;
+  text-decoration: none;
+  border-radius: 8px;
+  background: #333;
+  color: white;
+}
