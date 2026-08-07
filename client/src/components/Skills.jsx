@@ -4,7 +4,7 @@ function Skills() {
   const [skills, setSkills] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/skills")
+    fetch("https://portfolio-website-kavya.onrender.com/skills")
       .then((res) => res.json())
       .then((data) => setSkills(data))
       .catch((err) => console.log(err));
