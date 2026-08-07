@@ -13,7 +13,7 @@ function Footer() {
         </a>
 
         <a
-          href="https://www.linkedin.com/in/kavya-mullapudi-8588b6380"
+          href="https://www.linkedin.com/in/kavya-mullapudi-8588b6380/"
           target="_blank"
           rel="noopener noreferrer"
         >
