@@ -339,3 +339,26 @@ nav ul li a:hover {
 .about-content h3 {
   margin-top: 25px;
 }
+.footer {
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+  background: #333;
+  color: white;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
