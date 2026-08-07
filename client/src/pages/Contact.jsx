@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {FaUser, FaEnvelope, FaComment} from "react-icons/fa";
+import {FaUser, FaEnvelope, FaCommentDots} from "react-icons/fa";
 import "./Contact.css";
 
 function Contact() {
