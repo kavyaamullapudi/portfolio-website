@@ -14,14 +14,43 @@ function Projects() {
   }, []);
 
   return (
-    <section>
+    <section className="projects-section">
       <h2>My Projects</h2>
 
-      <div>
+      <div className="projects-container">
         {projects.map((project) => (
-          <div key={project._id}>
+          <div className="project-card" key={project._id}>
             <h3>{project.title}</h3>
-            <p>{project.technology}</p>
+
+            <p>
+              <strong>Technology:</strong> {project.technology}
+            </p>
+
+            <p>
+              {project.description || "Project description coming soon."}
+            </p>
+
+            <div className="project-buttons">
+              {project.githubLink && (
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              )}
+
+              {project.liveLink && (
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Demo
+                </a>
+              )}
+            </div>
           </div>
         ))}
       </div>

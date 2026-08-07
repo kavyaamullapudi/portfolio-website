@@ -14,14 +14,14 @@ function Skills() {
   }, []);
 
   return (
-    <section>
+    <section className="skills-section">
       <h2>My Skills</h2>
 
-      <div>
+      <div className="skills-container">
         {skills.map((skill) => (
-          <div key={skill._id}>
+          <div className="skill-card" key={skill._id}>
             <h3>{skill.name}</h3>
-            <p>Level: {skill.level}</p>
+            <p>{skill.level}</p>
           </div>
         ))}
       </div>

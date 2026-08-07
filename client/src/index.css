@@ -166,3 +166,74 @@ nav ul li a:hover {
 .project-card p {
   color: #555;
 }
+.projects-section {
+  padding: 60px 8%;
+  text-align: center;
+}
+
+.projects-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.project-card {
+  width: 300px;
+  padding: 25px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  text-align: left;
+}
+
+.project-card h3 {
+  margin-bottom: 12px;
+}
+
+.project-card p {
+  line-height: 1.6;
+}
+
+.project-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.project-buttons a {
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 6px;
+  background: #333;
+  color: white;
+}
+.skills-section {
+  padding: 60px 8%;
+  text-align: center;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.skill-card {
+  width: 180px;
+  padding: 20px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.skill-card h3 {
+  margin-bottom: 8px;
+}
+
+.skill-card p {
+  margin: 0;
+}
