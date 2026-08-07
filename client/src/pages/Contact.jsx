@@ -1,6 +1,8 @@
 import { useState } from "react";
-import {FaUser, FaEnvelope, FaCommentDots} from "react-icons/fa";
+import { FaUser, FaEnvelope, FaCommentDots } from "react-icons/fa";
+import { motion } from "framer-motion";
 import "./Contact.css";
+
 
 function Contact() {
 
@@ -25,13 +27,13 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Empty field validation
+
     if (!formData.name || !formData.email || !formData.message) {
       setStatus("Please fill all fields");
       return;
     }
 
-    // Email validation
+
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailPattern.test(formData.email)) {
@@ -41,6 +43,7 @@ function Contact() {
 
 
     setLoading(true);
+
 
     try {
 
@@ -75,12 +78,19 @@ function Contact() {
       setLoading(false);
 
     }
+
   };
 
 
   return (
 
-    <div className="contact">
+    <motion.div
+      className="contact"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+
 
       <h1>Contact Me</h1>
 
@@ -88,50 +98,60 @@ function Contact() {
       <form onSubmit={handleSubmit}>
 
 
-       <div className="input-box">
-  <FaUser />
-
-  <input
-    type="text"
-    name="name"
-    placeholder="Your Name"
-    value={formData.name}
-    onChange={handleChange}
-  />
-
-</div>
-
-
         <div className="input-box">
-  <FaEnvelope />
 
-  <input
-    type="email"
-    name="email"
-          placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
-        />
+          <FaUser />
+
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+          />
+
         </div>
 
+
+
         <div className="input-box">
 
-  <FaCommentDots />
+          <FaEnvelope />
 
-  <textarea
-    name="message"
-    placeholder="Your Message"
-    value={formData.message}
-    onChange={handleChange}
-  ></textarea>
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+          />
 
-</div>
+        </div>
+
+
+
+
+        <div className="input-box">
+
+          <FaCommentDots />
+
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            value={formData.message}
+            onChange={handleChange}
+          ></textarea>
+
+        </div>
+
+
 
         <button type="submit" disabled={loading}>
 
           {loading ? "Sending..." : "Send Message"}
 
         </button>
+
 
 
         <p className="status">
@@ -141,9 +161,11 @@ function Contact() {
 
       </form>
 
-    </div>
+
+    </motion.div>
 
   );
 }
+
 
 export default Contact;

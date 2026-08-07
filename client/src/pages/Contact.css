@@ -7,19 +7,16 @@
   box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
-
 .contact h1 {
   text-align: center;
   margin-bottom: 30px;
 }
-
 
 .contact form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-
 
 .input-box {
   display: flex;
@@ -30,32 +27,25 @@
   border-radius: 8px;
 }
 
-
 .input-box svg {
   font-size: 20px;
   color: #2563eb;
 }
 
-
 .input-box input,
 .input-box textarea {
-
   width: 100%;
   border: none;
   outline: none;
   font-size: 16px;
-
 }
-
 
 .input-box textarea {
   height: 100px;
   resize: none;
 }
 
-
 .contact button {
-
   padding: 12px;
   background: #2563eb;
   color: white;
@@ -63,32 +53,27 @@
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
-
 }
-
 
 .contact button:hover {
-
   background: #1d4ed8;
-
 }
 
+.contact button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 
 .status {
-
   text-align: center;
   color: green;
   font-weight: bold;
-
 }
 
-
-@media(max-width:768px){
+@media(max-width:768px) {
 
   .contact {
-
     width: 85%;
-
   }
 
 }
