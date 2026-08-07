@@ -6,19 +6,22 @@ function Skills() {
   useEffect(() => {
     fetch("https://portfolio-website-kavya.onrender.com/skills")
       .then((res) => res.json())
-      .then((data) => setSkills(data))
-      .catch((err) => console.log(err));
+      .then((data) => {
+        console.log("Skills:", data);
+        setSkills(data);
+      })
+      .catch((error) => console.error("Error:", error));
   }, []);
 
   return (
     <section>
       <h2>My Skills</h2>
 
-      <div className="skills-container">
+      <div>
         {skills.map((skill) => (
-          <div key={skill._id} className="skill-card">
+          <div key={skill._id}>
             <h3>{skill.name}</h3>
-            <p>{skill.level}</p>
+            <p>Level: {skill.level}</p>
           </div>
         ))}
       </div>
