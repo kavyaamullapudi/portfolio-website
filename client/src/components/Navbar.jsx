@@ -4,7 +4,9 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <nav className="navbar">
-      <div className="logo">Kavya.</div>
+      <div className="logo">
+        <Link to="/">Kavya</Link>
+      </div>
 
       <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
