@@ -7,6 +7,8 @@ function Contact() {
     message: "",
   });
 
+  const [status, setStatus] = useState("");
+
   const handleChange = (e) => {
     setForm({
       ...form,
@@ -16,31 +18,44 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatus("Sending...");
 
-    const res = await fetch("https://portfolio-website-kavya.onrender.com/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(form),
-    });
+    try {
+      const res = await fetch(
+        "https://portfolio-website-kavya.onrender.com/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form),
+        }
+      );
 
-    const data = await res.json();
+      const data = await res.json();
 
-    alert(data.message);
+      if (res.ok) {
+        setStatus("Message sent successfully! ✅");
 
-    setForm({
-      name: "",
-      email: "",
-      message: "",
-    });
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        setStatus("Failed to send message.");
+      }
+    } catch (error) {
+      setStatus("Something went wrong. Please try again.");
+    }
   };
 
   return (
-    <section>
+    <section className="contact-section">
       <h2>Contact Me</h2>
+      <p>Feel free to contact me for opportunities or collaborations.</p>
 
-      <form onSubmit={handleSubmit}>
+      <form className="contact-form" onSubmit={handleSubmit}>
         <input
           type="text"
           name="name"
@@ -67,7 +82,9 @@ function Contact() {
           required
         />
 
-        <button type="submit">Send</button>
+        <button type="submit">Send Message</button>
+
+        {status && <p className="contact-status">{status}</p>}
       </form>
     </section>
   );
