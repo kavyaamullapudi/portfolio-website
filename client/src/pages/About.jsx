@@ -1,36 +1,33 @@
-import "./About.css";
-
 function About() {
   return (
-    <section className="about">
-      <h1>About Me</h1>
+    <section className="about-section">
+      <div className="about-content">
+        <h2>About Me</h2>
 
-      <p>
-        Hello! I'm <strong>Kavya Mullapudi</strong>, a Computer Science
-        Engineering student passionate about Full Stack Web Development.
-      </p>
+        <p>
+          I am a Computer Science and Engineering student interested in
+          software development and web technologies. I enjoy learning new
+          technologies and building practical projects.
+        </p>
 
-      <p>
-        I have knowledge of HTML, CSS, JavaScript, React.js, Node.js,
-        Express.js, MongoDB, Java, and Python. I enjoy solving problems
-        and building modern web applications.
-      </p>
+        <h3>Education</h3>
 
-      <div className="about-details">
-        <div className="card">
-          <h3>🎓 Education</h3>
-          <p>B.Tech - Computer Science Engineering</p>
-        </div>
+        <p>
+          Bachelor of Technology in Computer Science and Engineering
+        </p>
 
-        <div className="card">
-          <h3>💻 Experience</h3>
-          <p>Fresher | MERN Stack Developer</p>
-        </div>
+        <h3>My Goal</h3>
 
-        <div className="card">
-          <h3>🎯 Goal</h3>
-          <p>To become a skilled Full Stack Developer.</p>
-        </div>
+        <p>
+          My goal is to build a strong career in software development and
+          continuously improve my programming and problem-solving skills.
+        </p>
+
+        <h3>Technologies</h3>
+
+        <p>
+          Java • Python • JavaScript • React.js • Node.js • Express.js • MongoDB
+        </p>
       </div>
     </section>
   );
