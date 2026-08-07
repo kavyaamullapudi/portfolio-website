@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {FaUser, FaEnvelope, FaComment} from "react-icons/fa";
 import "./Contact.css";
 
 function Contact() {
@@ -87,31 +88,44 @@ function Contact() {
       <form onSubmit={handleSubmit}>
 
 
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-        />
+       <div className="input-box">
+  <FaUser />
+
+  <input
+    type="text"
+    name="name"
+    placeholder="Your Name"
+    value={formData.name}
+    onChange={handleChange}
+  />
+
+</div>
 
 
-        <input
-          type="email"
-          name="email"
+        <div className="input-box">
+  <FaEnvelope />
+
+  <input
+    type="email"
+    name="email"
           placeholder="Your Email"
           value={formData.email}
           onChange={handleChange}
         />
+        </div>
 
+        <div className="input-box">
 
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          value={formData.message}
-          onChange={handleChange}
-        ></textarea>
+  <FaCommentDots />
 
+  <textarea
+    name="message"
+    placeholder="Your Message"
+    value={formData.message}
+    onChange={handleChange}
+  ></textarea>
+
+</div>
 
         <button type="submit" disabled={loading}>
 
