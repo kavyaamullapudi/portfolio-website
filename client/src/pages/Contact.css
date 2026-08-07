@@ -4,10 +4,6 @@
   text-align: center;
 }
 
-.contact h1 {
-  margin-bottom: 30px;
-}
-
 .contact form {
   display: flex;
   flex-direction: column;
@@ -18,13 +14,12 @@
 .contact textarea {
   padding: 12px;
   font-size: 16px;
-  border: 1px solid #ccc;
   border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
 .contact textarea {
   height: 120px;
-  resize: none;
 }
 
 .contact button {
@@ -36,6 +31,13 @@
   cursor: pointer;
 }
 
-.contact button:hover {
-  background-color: #1d4ed8;
+.contact button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.status {
+  margin-top: 15px;
+  color: green;
+  font-weight: bold;
 }

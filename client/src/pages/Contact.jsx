@@ -11,6 +11,8 @@ function Contact() {
 
   const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
+
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -21,9 +23,26 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Empty field validation
+    if (!formData.name || !formData.email || !formData.message) {
+      setStatus("Please fill all fields");
+      return;
+    }
+
+    // Email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(formData.email)) {
+      setStatus("Please enter a valid email");
+      return;
+    }
+
+
     setLoading(true);
 
     try {
+
       const response = await fetch("http://localhost:5000/contact", {
         method: "POST",
         headers: {
@@ -32,9 +51,11 @@ function Contact() {
         body: JSON.stringify(formData)
       });
 
+
       const data = await response.json();
 
       setStatus(data.message);
+
 
       setFormData({
         name: "",
@@ -42,20 +63,29 @@ function Contact() {
         message: ""
       });
 
+
     } catch (error) {
+
       console.log(error);
       setStatus("Something went wrong");
+
+    } finally {
+
+      setLoading(false);
+
     }
-    setLoading(false);
   };
 
 
   return (
+
     <div className="contact">
 
       <h1>Contact Me</h1>
 
+
       <form onSubmit={handleSubmit}>
+
 
         <input
           type="text"
@@ -83,18 +113,22 @@ function Contact() {
         ></textarea>
 
 
-       <button type="submit" disabled={loading}>
-  {loading ? "Sending..." : "Send Message"}
-</button>
+        <button type="submit" disabled={loading}>
+
+          {loading ? "Sending..." : "Send Message"}
+
+        </button>
 
 
         <p className="status">
           {status}
         </p>
 
+
       </form>
 
     </div>
+
   );
 }
 
