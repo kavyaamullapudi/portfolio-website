@@ -7,7 +7,7 @@ function Skills() {
     fetch("https://portfolio-website-kavya.onrender.com/skills")
       .then((res) => res.json())
       .then((data) => {
-        console.log("Skills:", data);
+        console.log("Skills data:", data);
         setSkills(data);
       })
       .catch((error) => console.error("Error:", error));
